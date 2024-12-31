@@ -1,0 +1,29 @@
+<div class="home-container">
+  <header class="home-header">
+    <h1>Welcome to the Application!</h1>
+    <button class="btn-logout" (click)="logout()">Logout</button>
+  </header>
+
+  <nav class="home-nav">
+    <a routerLink="/" class="nav-link">Go to Root</a>
+    <a routerLink="/home" class="nav-link">Go to Home</a>
+  </nav>
+
+  <main class="home-content">
+    <section class="app-section">
+      <app-csv-upload (csvUploaded)="handleCsvUpload($event)"></app-csv-upload>
+    </section>
+    <section class="app-section">
+      <app-template-editor [csvData]="csvData"></app-template-editor>
+    </section>
+    <section class="app-section">
+      <app-email-form></app-email-form>
+    </section>
+    <section class="app-section">
+      <app-dashboard></app-dashboard>
+    </section>
+    <section class="app-section">
+      <app-logs></app-logs>
+    </section>
+  </main>
+</div>

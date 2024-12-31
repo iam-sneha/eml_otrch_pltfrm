@@ -1,0 +1,28 @@
+<h2>CSV Upload</h2>
+<form [formGroup]="csvForm" (ngSubmit)="onUpload()" class="form-container">
+  <input
+    type="file"
+    formControlName="file"
+    (change)="handleFileInput($event)"
+    accept=".csv"
+    class="file-input"
+  />
+  <button type="submit" [disabled]="!csvForm.valid" class="upload-button">
+    Upload
+  </button>
+</form>
+<div *ngIf="csvData?.length" class="preview-container">
+  <h3>CSV Preview:</h3>
+  <table class="csv-table">
+    <thead>
+      <tr>
+        <th *ngFor="let header of csvHeaders">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of csvData">
+        <td *ngFor="let header of csvHeaders">{{ row[header] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

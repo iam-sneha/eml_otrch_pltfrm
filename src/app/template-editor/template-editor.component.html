@@ -1,0 +1,15 @@
+<h2 class="editor-header">Email Template Editor</h2>
+<div class="editor-container">
+  <textarea
+    [(ngModel)]="emailTemplate"
+    rows="10"
+    cols="50"
+    class="template-textarea"
+    placeholder="Write your email template here..."
+  ></textarea>
+  <button (click)="previewTemplate()" class="preview-button">Preview</button>
+</div>
+<div *ngIf="previewData" class="preview-container">
+  <h3>Preview:</h3>
+  <div class="preview-content" [innerHTML]="previewData"></div>
+</div>

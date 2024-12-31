@@ -1,0 +1,16 @@
+<div class="dashboard">
+  <h2>Campaign Metrics</h2>
+  <div class="metric-container">
+    <div class="metric">
+      <p><strong>Emails Sent:</strong> {{ metrics.emailsSent }}</p>
+    </div>
+    <div class="metric">
+      <p><strong>Emails Pending:</strong> {{ metrics.emailsPending }}</p>
+    </div>
+    <div class="metric">
+      <p><strong>Emails Failed:</strong> {{ metrics.emailsFailed }}</p>
+    </div>
+  </div>
+
+  <button (click)="resetMetrics()" class="btn-reset">Reset Metrics</button>
+</div>

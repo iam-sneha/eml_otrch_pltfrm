@@ -1,0 +1,61 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>Application Dashboard</h1>
+  </header>
+
+  <div class="app-layout">
+    <!-- Sidenav -->
+    <aside class="sidenav">
+      <nav>
+        <a
+          routerLink="/home"
+          [class.disabled]="!(isLoggedIn | async)"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          >CSV Upload</a
+        >
+        <a
+          routerLink="/CsvUpload"
+          [class.disabled]="!(isLoggedIn | async)"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          >CSV Upload</a
+        >
+        <a
+          routerLink="/templateEditor"
+          [class.disabled]="!(isLoggedIn | async)"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          >Email Template Editor</a
+        >
+        <a
+          routerLink="/EmailForm"
+          [class.disabled]="!(isLoggedIn | async)"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          >Send Email</a
+        >
+        <a
+          routerLink="/Dashboard"
+          [class.disabled]="!(isLoggedIn | async)"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          >Campaign Metrics</a
+        >
+
+        <a
+          routerLink="/Logs"
+          [class.disabled]="!(isLoggedIn | async)"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          >Email Error Logs</a
+        >
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
